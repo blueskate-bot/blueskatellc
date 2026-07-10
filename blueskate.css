@@ -317,6 +317,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px 0;
+  overflow: visible;
 }
 
 .hero-art .dot {
@@ -326,19 +328,19 @@ p {
 }
 
 .hero-art .dot-1 {
-  width: 280px;
-  height: 280px;
+  width: 260px;
+  height: 260px;
   background: var(--sky-tint);
-  top: -20px;
-  right: -20px;
+  top: 4px;
+  right: 0;
 }
 
 .hero-art .dot-2 {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   background: var(--accent);
-  bottom: 10px;
-  left: -10px;
+  bottom: 28px;
+  left: 24px;
 }
 
 .hero-art img {
@@ -353,8 +355,10 @@ p {
   z-index: 1;
   display: block;
   width: 100%;
-  border-radius: var(--radius);
-  transform: scale(1.18);
+  max-width: 380px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 0;
 }
 
 .hero-mascot {
