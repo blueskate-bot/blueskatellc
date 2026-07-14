@@ -890,6 +890,7 @@ main {
   border-radius: var(--radius);
   padding: 20px;
   box-shadow: 0 10px 24px -18px rgba(0, 51, 102, 0.35);
+  min-width: 0;
 }
 
 .feature-card h3 {
