@@ -906,6 +906,11 @@ main {
   margin-bottom: 12px;
 }
 
+.feature-photos img {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 .feature-photos img,
 .feature-card > img {
   width: 100%;
