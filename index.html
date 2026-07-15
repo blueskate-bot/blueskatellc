@@ -43,9 +43,11 @@
   <div class="hero-art">
     <span class="dot dot-1"></span>
     <span class="dot dot-2"></span>
-    <video class="mascot-hero" autoplay muted loop playsinline aria-label="Blue Skate mascot turning around on skates" onclick="this.paused ? this.play() : this.pause()">
-      <source src="vids/mascot-turn.mp4" type="video/mp4">
+    <video class="mascot-hero" autoplay muted loop playsinline aria-label="Blue Skate mascot turning around on skates — tap to hear sound" onclick="this.muted = !this.muted; if (this.paused) this.play();">
+      <source src="vids/mascot-turn-alpha.webm" type="video/webm">
+      <source src="vids/mascot-turn-sound.mp4" type="video/mp4">
     </video>
+    <span class="mascot-sound-hint">🔊 Tap for sound</span>
   </div>
 </section>
 

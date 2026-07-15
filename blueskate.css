@@ -366,10 +366,27 @@ p {
   max-width: 300px;
   height: auto;
   margin: 0 auto;
-  border-radius: var(--radius);
-  box-shadow: 0 16px 32px -18px rgba(0, 51, 102, 0.4);
+  border-radius: 0;
   cursor: pointer;
+  filter: drop-shadow(0 14px 22px rgba(0, 51, 102, 0.3));
+}
+
+.mascot-sound-hint {
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
   background: var(--white);
+  padding: 5px 12px;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px -8px rgba(0, 51, 102, 0.4);
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .hero-mascot {
