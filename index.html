@@ -43,7 +43,9 @@
   <div class="hero-art">
     <span class="dot dot-1"></span>
     <span class="dot dot-2"></span>
-    <img src="vids/mascot-anim-v5.gif" class="mascot-hero" alt="Blue Skate mascot rolling in on skates" />
+    <video class="mascot-hero" autoplay muted loop playsinline aria-label="Blue Skate mascot turning around on skates" onclick="this.paused ? this.play() : this.pause()">
+      <source src="vids/mascot-turn.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
