@@ -43,8 +43,8 @@
   <div class="hero-art">
     <span class="dot dot-1"></span>
     <span class="dot dot-2"></span>
-    <video class="mascot-hero" autoplay muted loop playsinline aria-label="Blue Skate mascot turning around on skates — tap to hear sound" onclick="this.muted = !this.muted; if (this.paused) this.play();">
-      <source src="vids/mascot-turn-alpha.webm" type="video/webm">
+    <canvas class="mascot-hero" id="mascotCanvas" aria-label="Blue Skate mascot turning around on skates — tap to hear sound"></canvas>
+    <video class="mascot-source" id="mascotSource" muted loop playsinline preload="auto">
       <source src="vids/mascot-turn-sound.mp4" type="video/mp4">
     </video>
     <span class="mascot-sound-hint">🔊 Tap for sound</span>
@@ -172,5 +172,43 @@
   })();
 </script>
 <script src="js/reveal.js" defer></script>
+<script>
+  (function () {
+    var video = document.getElementById('mascotSource');
+    var canvas = document.getElementById('mascotCanvas');
+    if (!video || !canvas) return;
+    var ctx = canvas.getContext('2d', { willReadFrequently: true });
+    var W = 640, H = 800;
+    canvas.width = W;
+    canvas.height = H;
+
+    function keyFrame() {
+      if (video.readyState >= 2) {
+        ctx.drawImage(video, 0, 0, W, H);
+        var frame = ctx.getImageData(0, 0, W, H);
+        var d = frame.data;
+        for (var i = 0; i < d.length; i += 4) {
+          var r = d[i], g = d[i + 1], b = d[i + 2];
+          var dist = Math.sqrt((255 - r) * (255 - r) + (255 - g) * (255 - g) + (255 - b) * (255 - b));
+          if (dist < 36) {
+            d[i + 3] = 0;
+          } else if (dist < 95) {
+            d[i + 3] = Math.round(255 * (dist - 36) / 59);
+          }
+        }
+        ctx.putImageData(frame, 0, 0);
+      }
+      requestAnimationFrame(keyFrame);
+    }
+
+    video.play().catch(function () {});
+    requestAnimationFrame(keyFrame);
+
+    canvas.addEventListener('click', function () {
+      video.muted = !video.muted;
+      if (video.paused) { video.play(); }
+    });
+  })();
+</script>
 </body>
 </html>

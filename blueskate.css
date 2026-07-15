@@ -371,6 +371,14 @@ p {
   filter: drop-shadow(0 14px 22px rgba(0, 51, 102, 0.3));
 }
 
+.mascot-source {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .mascot-sound-hint {
   position: absolute;
   z-index: 2;
