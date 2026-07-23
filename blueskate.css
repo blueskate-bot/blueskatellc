@@ -65,6 +65,7 @@ h1, h2, h3 {
 
 p {
   margin: 0 0 1em;
+  font-size: 17px;
 }
 
 .accent-text {
@@ -508,7 +509,7 @@ main {
 }
 
 .section-title {
-  font-size: 28px;
+  font-size: 30px;
   text-align: center;
   position: relative;
   padding-bottom: 14px;
@@ -539,6 +540,7 @@ main {
   text-align: center;
   max-width: 520px;
   margin: 0 auto 36px;
+  font-size: 18px;
 }
 
 .content-block {
@@ -1016,7 +1018,7 @@ main {
 }
 
 .feature-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--ink-soft);
   margin: 0;
   line-height: 1.6;
@@ -1098,7 +1100,7 @@ main {
 }
 
 .resource-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--ink-soft);
   margin: 0 0 16px;
   line-height: 1.6;
@@ -1371,7 +1373,7 @@ main {
 }
 
 .video-card-caption p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--ink-soft);
   margin: 0;
 }
